@@ -22,3 +22,18 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# REQUIREMENTS
+
+Create a feature instagram app
+
+* Sign up, login
+* User can create a post, which contains images and content in the post
+* User can like or comment on the post
+* User can follow other users, see who is following and following whom
+* Users can view first name, last name, email, about me section, upload avatar
+
+The gems will be used
+
+* gem devise "manage registration, login"
+* gem carrier_wave "upload image"
