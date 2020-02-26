@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '11e38e10a0ea3de113ab86c524cdde743239baf19837f9ce7cabeb6b1a68fbbae753b33ff05f99bf736c6dbd84b6675a142c255df630370950b0c1be9a1250fb'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -229,7 +229,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -252,6 +252,8 @@ Devise.setup do |config|
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
+  # config.sign_out_via = :get
+  # config.sign_out_via_get_becuase_of = :ie
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
