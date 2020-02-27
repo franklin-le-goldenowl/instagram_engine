@@ -1,0 +1,7 @@
+<h2>Post detail</h2>
+<div>
+  <%= @post.caption %>
+  <%= image_tag @post.image.url(:thumb) %>
+</div>
+
+<%= link_to "Back", posts_path %>
