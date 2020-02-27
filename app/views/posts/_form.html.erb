@@ -1,0 +1,7 @@
+<% method = post.persisted? ? :put : :post %>
+
+<%= simple_form_for post, method: method do |f| %>
+  <%= f.input :image %>
+  <%= f.input :caption %>
+  <%= f.button :submit %>
+<% end %>
