@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem "puma", ">= 3.12.2"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,8 +36,6 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'devise'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -64,10 +62,16 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'paperclip'
-gem 'simple_form'
+gem "simple_form", ">= 5.0.0"
 gem 'slim-rails'
 gem 'pry-rails'
 gem 'bootstrap-sass'
 gem 'haml'
 gem "pagy"
 gem 'bootstrap'
+gem 'webpacker'
+gem "devise", ">= 4.7.1"
+gem "rack", ">= 2.0.8"
+gem "loofah", ">= 2.3.1"
+gem "rubyzip", ">= 1.3.0"
+gem "nokogiri", ">= 1.10.8"

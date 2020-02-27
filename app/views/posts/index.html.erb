@@ -1,33 +1,30 @@
-<h2>Post index</h2>
+<div id="post-index">
+  <h2>Post index</h2>
 
-<%# <%= simple_form_for :search, url: posts_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-  <%# <%= f.input :caption, input_html: {value: ""} %>
-  <%# <%= f.submit "Search", class: "btn btn-primary" %>
-<%# <% end %>
-
-<%= simple_form_for :search, url: posts_path, method: :GET do |f| %>
-  <%= f.input :caption, input_html: {value: ""} %>
-  <%= f.submit "Search" %>
-<% end %>
-
-<div class="container">
-<div class="row">
-  <% @posts.each do |post| %>
-      <div class="col">
-        Caption: <%= post.caption %>
-      </div>
-      <div class="col">
-        Image: <%= image_tag post.image.url(:thumb) %>
-      </div>
-    <%= link_to "Detail", post_path(post) %>
-    <%= link_to "Edit", edit_post_path(post) %>
-    <%= link_to "Delete", post_path(post), method: :DELETE, data: { confirm: 'Are you sure?' } %>
+  <%= simple_form_for :search, url: posts_path, method: :GET do |f| %>
+    <%= f.input :caption, input_html: {value: ""} %>
+    <%= f.submit "Search" %>
   <% end %>
+
+  <div class="container">
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col">
+          Caption: <%= post.caption %>
+        </div>
+        <div class="col">
+          Image: <%= image_tag post.image.url(:thumb) %>
+        </div>
+        <%= link_to "Detail", post_path(post) %>
+        <%= link_to "Edit", edit_post_path(post) %>
+        <%= link_to "Delete", post_path(post), method: :DELETE, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
+
+  <%== pagy_nav(@pagy) %>
+
+  <%= link_to "New Post", new_post_path %>
+
+  <%= link_to "Log out", destroy_user_session_path, method: :DELETE %>
 </div>
-</div>
-
-<%== pagy_nav(@pagy) %>
-
-<%= link_to "New Post", new_post_path %>
-
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
